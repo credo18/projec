@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Musanze Fare Estimator</title>
+
+    <style>
+        body{font-family:Arial;text-align:center;background:#eef;}
+        input,button{padding:10px;margin:10px;}
+        button{background:#2575fc;color:white;border:none;cursor:pointer;}
+    </style>
+</head>
+<body>
+
+<h1>Musanze Transport Fare Estimator</h1>
+
+<input type="number" id="distance" placeholder="Distance in km">
+<button onclick="fare()">Estimate Fare</button>
+
+<p id="result">Fare: 0 RWF</p>
+
+<script>
+function fare(){
+    const d=parseFloat(document.getElementById("distance").value);
+    if(d>0){
+        document.getElementById("result").textContent="Fare: "+(d*350)+" RWF";
+    }else{
+        document.getElementById("result").textContent="Enter valid distance";
+    }
+}
+</script>
+
+</body>
+</html>
